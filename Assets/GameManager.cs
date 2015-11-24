@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
@@ -15,6 +16,10 @@ public class GameManager : MonoBehaviour {
 
 	public Transform circle;
 	public Transform square;
+
+	private int bodyCount = 0;
+
+	public Text bodiesCountDisplay;
 
 	void Start() {
 		gamePanel.SetActive (false);
@@ -47,5 +52,7 @@ public class GameManager : MonoBehaviour {
 			isCircle ? scale : 2f - scale,
 			0
 		);
+		bodyCount++;
+		bodiesCountDisplay.text = "Bodies: " + bodyCount;
 	}
 }
